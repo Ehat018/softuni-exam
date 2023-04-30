@@ -1,3 +1,4 @@
+<?php get_header (); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 	<title>Properties</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 
-	<link rel="stylesheet" href="./css/master.css">
+	<link rel="stylesheet" href="http://localhost/wordpress/wp-content/themes/softuni-jobs-exam/files/css/master.css">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,9 +16,13 @@
 		<header class="site-header">
 			<h1 class="site-title"><a href="#">Properties Offers</a></h1>
 		</header>
-
 		<ul class="properties-listing">
-			<li class="property-card">
+<?php if ( have_posts() ) : ?>
+   
+	<?php while( have_posts() ) : the_post() ?>
+            
+
+	<li class="property-card">
 				<div class="property-primary">
 					<h2 class="property-title"><a href="#">Two-bedroom apartment</a></h2>
 					<div class="property-meta">
@@ -36,28 +41,17 @@
 				</div>
 			</li>
 
-			<li class="property-card">
-				<div class="property-primary">
-					<h2 class="property-title"><a href="#">Two-bedroom apartment</a></h2>
-					<div class="property-meta">
-						<span class="meta-location">Ovcha Kupel, Sofia</span>
-						<span class="meta-total-area">Total area: 91.65 sq.m</span>
-					</div>
-					<div class="property-details">
-						<span class="property-price">€ 100,815</span>
-						<span class="property-date">Posted 14 days ago</span>
-					</div>
-				</div>
-				<div class="property-image">
-					<div class="property-image-box">
-						<img src="images/bedroom.jpg" alt="property image">
-					</div>
-				</div>
-			</li>
-		</ul>
+			
+
+    <?php endwhile; ?>
+
+
+<?php endif; ?>
+
 		
+		</ul>
 		<footer class="site-footer">
-			<p>&copy; Copyright 2023 | Developer links: 
+			<p>&copy; Copyright 2023| Developer links: 
 				<a href="/edits.html">Edits</a>,
 				<a href="/index.html">Home</a>,
 				<a href="/single.html">Single</a>
@@ -67,3 +61,4 @@
 
 </body>
 </html>
+<?php get_footer(); ?>
