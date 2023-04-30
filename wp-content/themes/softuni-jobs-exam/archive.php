@@ -17,6 +17,9 @@
 			<h1 class="site-title"><a href="#"></a></h1>
 		</header>
 		<ul class="properties-listing">
+
+<?php  the_archive_title() ; ?>
+
 <?php if ( have_posts() ) : ?>
    
 	<?php while( have_posts() ) : the_post() ?>
@@ -26,11 +29,11 @@
 				<div class="property-primary">
 					<h2 class="property-title"><a href="<?php the_permalink(); ?>">Two-bedroom apartment</a></h2>
 					<div class="property-meta">
-						<span class="meta-location">Mladost, Sofia</span>
-						<span class="meta-total-area">Total area: 110.65 sq.m</span>
+						<span class="meta-location">Ovcha Kupel, Sofia</span>
+						<span class="meta-total-area">Total area: 91.65 sq.m</span>
 					</div>
 					<div class="property-details">
-						<span class="property-price">€ 90,800</span>
+						<span class="property-price">€ 100,815</span>
 						<span class="property-date"><?php the_date(); ?></span>
 					</div>
 				</div>
@@ -59,7 +62,11 @@
 		
 		</ul>
 		<footer class="site-footer">
-
+			<p>&copy; Copyright 2023| Developer links: 
+				<a href="/edits.html">Edits</a>,
+				<a href="/index.html">Home</a>,
+				<a href="/single.html">Single</a>
+			</p>
 		</footer>
 	</div>
 
